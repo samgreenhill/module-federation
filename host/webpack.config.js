@@ -2,10 +2,15 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { dependencies } = require("./package.json");
+const path = require('path');
 
 module.exports = {
   entry: "./src/index",
   mode: "development",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'commonjs2'
+  },
   devServer: {
     port: 3000,
   },
@@ -32,7 +37,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "Host",
       remotes: {
-        Remote: `Remote@http://localhost:4000/moduleEntry.js`,
+        Remote: `Remote@https://d28qtzkxq1amv5.cloudfront.net/moduleEntry.js`,
       },
       shared: {
         ...dependencies,

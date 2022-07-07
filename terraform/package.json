@@ -1,0 +1,12 @@
+{
+  "name": "terraform",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "plan": "terraform plan -out terraform.out",
+    "plan-destroy": "terraform plan -destroy -out terraform.out",
+    "apply": "terraform apply 'terraform.out'"
+  },
+  "author": "",
+  "license": "ISC"
+}

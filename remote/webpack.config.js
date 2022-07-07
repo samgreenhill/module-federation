@@ -7,6 +7,10 @@ const { dependencies } = require("./package.json");
 module.exports = {
   entry: "./src/index",
   mode: "development",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'commonjs2'
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
