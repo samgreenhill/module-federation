@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.27"
+      version = ">= 4.0"
     }
   }
 
@@ -23,8 +23,7 @@ provider "aws" {
 locals {
   app_name             = "module-federation-poc"
   region               = "eu-west-1"
-  lambda_consumer_name = "consumer"
-  lambda_dcm_name      = "dcm"
+  lambda_api_name      = "remote-api"
   accountId            = "785508395937"
   stage_name           = "dev"
 }

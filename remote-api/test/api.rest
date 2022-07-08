@@ -1,0 +1,5 @@
+GET https://nnrx7i7f1k.execute-api.eu-west-1.amazonaws.com/dev/api HTTP/1.1
+
+###
+
+GET https://d15qa32kp313do.cloudfront.net/api HTTP/1.1

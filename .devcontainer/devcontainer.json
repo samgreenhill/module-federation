@@ -19,7 +19,8 @@
 			"extensions": [
 				"dbaeumer.vscode-eslint",
 				"amazonwebservices.aws-toolkit-vscode",
-				"hashicorp.terraform"
+				"hashicorp.terraform",
+				"humao.rest-client"
 			]
 		}
 	},

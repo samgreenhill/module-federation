@@ -26,4 +26,7 @@ cd ..
 ## AWS
 
 ### Recursively copy files to s3
-`aws s3 cp ./host/dist s3://host-webcontent --recursive`
+```
+aws s3 cp ./host/dist s3://host-webcontent --recursive
+aws s3 cp ./remote/dist s3://remote-webcontent --recursive
+```

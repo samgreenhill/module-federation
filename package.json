@@ -5,7 +5,8 @@
       "packages": [
         "host",
         "remote",
-        "terraform"
+        "terraform",
+        "remote-api"
       ]
     },
     "scripts": {
