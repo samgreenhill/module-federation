@@ -1,10 +1,6 @@
 // remote/src/Button.js
 import React from "react";
 
-export const Button = () => <button onClick={handleClick}>Hello</button>;
-
-const handleClick = (e) => {
-    console.log('this is:', e);
-  };
+export const Button = () => <button onClick={() => alert("Hello")}>Hello</button>;
 
 export default Button;
