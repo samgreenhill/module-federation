@@ -3,19 +3,35 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 const { dependencies } = require("./package.json");
+const webpackMockServer = require("webpack-mock-server");
 
 module.exports = {
   entry: "./src/index",
   mode: "development",
   output: {
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
+    publicPath: 'auto',
   },
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    port: 4000
+    port: 4000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Headers': '*',
+    },
+    proxy: {
+      '/api': {
+        bypass: (request, response) => {
+          if (request.url.substr(-4) === '/api') {
+            response.send('mocked data from webpack.devserver.mock.config.js')
+          }
+        }
+      }
+    },
   },
   module: {
     rules: [
